@@ -19,8 +19,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "yarn  eslint",
-      "yarn  format"
+      "npm run eslint",
+      "npm run format"
     ]
   },
   "files": [
