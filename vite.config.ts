@@ -1,23 +1,23 @@
-import { resolve } from 'node:path'
-
 import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import EsLint from 'vite-plugin-linter'
+import { EsLinter, linterPlugin } from 'vite-plugin-linter'
 import tsConfigPaths from 'vite-tsconfig-paths'
-const { EsLinter, linterPlugin } = EsLint
+
 import * as packageJson from './package.json'
+
 // https://vitejs.dev/config/
-export default defineConfig((configEnv) => ({
+export default defineConfig(configEnv => ({
   plugins: [
     dts({
-      include: ['src/component/'],
+      include: ['src/component/']
     }),
     react(),
     tsConfigPaths(),
     linterPlugin({
       include: ['./src}/**/*.{ts,tsx}'],
-      linters: [new EsLinter({ configEnv })],
+      linters: [new EsLinter({ configEnv })]
     })
   ],
   build: {
@@ -25,10 +25,10 @@ export default defineConfig((configEnv) => ({
       entry: resolve('src', 'component/index.ts'),
       name: 'ReactViteLibrary',
       formats: ['es', 'umd'],
-      fileName: (format) => `react-vite-library.${format}.js`,
+      fileName: format => `react-vite-library.${format}.js`
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.peerDependencies)],
-    },
-  },
+      external: [...Object.keys(packageJson.peerDependencies)]
+    }
+  }
 }))
