@@ -4,13 +4,16 @@
   "version": "0.0.2",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    ":d": "npm run dev",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
+    "check:code": "tsc --noEmit",
+    "dev": "vite",
     "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc",
-    "prepare": "husky install"
+    "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "husky": {
     "hooks": {

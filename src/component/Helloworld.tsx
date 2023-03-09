@@ -1,7 +1,7 @@
-import React from 'react'
-export interface IHelloWorld {
-  text: string
+export interface IHelloWorldProps {
+  children: string
 }
-export const Helloworld = ({ text }: IHelloWorld) => {
-  return <div className="text">This is test text: {text}</div>
+
+export default function HelloWorld(props: IHelloWorldProps) {
+  return <pre>{props.children}</pre>
 }
