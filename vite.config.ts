@@ -27,7 +27,7 @@ export default defineConfig(configEnv => ({
       entry: resolve('src', 'component/index.ts'),
       name: 'ReactViteLibrary',
       formats: ['es', 'umd'],
-      fileName: format => `react-vite-library.${format}.js`
+      fileName: format => `productive-vite-react-library.${format}.js`
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)]
