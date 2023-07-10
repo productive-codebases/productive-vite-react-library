@@ -1,7 +1,7 @@
 {
   "name": "@productive-codebases/productive-vite-react-library",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     ":d": "npm run dev",
